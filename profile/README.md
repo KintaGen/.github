@@ -42,7 +42,7 @@ Every output is pinned back to Filecoin, ensuring that results are immediately a
 
 ---
 
-## 2. Data Model (suggested v0.1)
+## 2. Data Model 
 
 ```mermaid
 erDiagram
@@ -127,9 +127,6 @@ erDiagram
 
 
 ---
-Of course. I've taken the raw text and reformatted it into a clean, well-structured markdown section. I've corrected the heading levels, formatted the mermaid and yaml code blocks, and used lists and bolding to improve readability, matching the style of a high-quality README.
-
-Here is the properly formatted content:
 
 ---
 
