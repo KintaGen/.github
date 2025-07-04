@@ -487,7 +487,7 @@ externalId: nmr_batman_agent_r
 
 ## 5. Flow NFT for Decrypt
 
-**Idea:** Owner mints `DatasetAccess` NFT on Flow; its resource stores `cid` + AES key hash. Lit’s JS client checks NFT ownership, retrieves key.
+*Owner mints `DatasetAccess` NFT on Flow; its resource stores `cid` + AES key hash. Lit’s JS client checks NFT ownership, retrieves key.
 
 ```solidity
 // SPDX-License-Identifier: MIT
