@@ -899,7 +899,7 @@ access(all) contract KintaGenNFT: NonFungibleToken {
 ## 📦 Code-base map
 
 | Layer | Repository | Docs |
-|-------|------------|------|
+| :--- | :--- | :--- |
 | **Frontend** (React + Vite) | [`kintagen`](https://github.com/KintaGen/kintagen) | [UI README](https://github.com/KintaGen/kintagen#readme) |
 | **Backend** (Node + Express) | [`kintagen-api`](https://github.com/KintaGen/kintagen-api) | [API README](https://github.com/KintaGen/kintagen-api#readme) |
-
+| **AI Tool** (Mosaia) | [`kintmtool`](https://github.com/KintaGen/kintmtool) | [Tool README](https://github.com/KintaGen/kintmtool#readme) |
