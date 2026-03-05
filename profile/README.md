@@ -41,9 +41,9 @@ Every output is pinned back to IPFS (via Pinata or Lighthouse), ensuring that re
 
 ---
 
-## 2. Agent Catalogue
+## 2. Scripts Catalogue
 
-| Agent slug            | Status      | Runtime                                         | API / Entry-point        | Purpose (one-liner)                                                                             | Typical inputs                                  | Heavy outputs (IPFS)                                       |
+| Slug            | Status      | Runtime                                         | API / Entry-point        | Purpose (one-liner)                                                                             | Typical inputs                                  | Heavy outputs (IPFS)                                       |
 | --------------------- | ----------- | ----------------------------------------------- | ------------------------ | ----------------------------------------------------------------------------------------------- | ----------------------------------------------- | ------------------------------------------------------------ |
 | **`ld50-dose`**       | ✅ Live      | **Rscript** ([scripts/drc_analysis.R](cci:7://file:///home/henrique/projects/kintagen/kintagen-r-api/scripts/drc_analysis.R:0:0-0:0))          | `POST /process-job` (kintagen-r-api) | Classical LD₅₀ / ED₅₀ dose-response modelling with **drc** → JSON + plot base64. | CSV (`dose, response, total`) or sample data    | Plot PNG representation                               |
 | **`gcms-xcms`**       | ✅ Live      | **Rscript** ([scripts/xcms_analysis.R](cci:7://file:///home/henrique/projects/kintagen/kintagen-r-api/scripts/xcms_analysis.R:0:0-0:0))         | `POST /process-job` (kintagen-r-api) | Full untargeted GC-MS pipeline using **xcms**. Includes peak extraction and retention alignment. | Directory of `mzML / CDF` (zipped)  | Stat data & intermediate results |
