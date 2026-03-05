@@ -1,6 +1,6 @@
 # KintaGen – Lab‑Assistant AI
 
-**Focus:** biology / science workflows, IPFS hot‑storage (Pinata/Lighthouse), asynchronous job queues (Vercel/Redis/QStash), Nostr NIP-44 decentralized profiles and encryption, Flow Cadence Logs using the power of blockchain and NFTs
+**Focus:** biology / science workflows, IPFS hot‑storage (Pinata/Synapse), asynchronous job queues (Vercel/Redis/QStash), Nostr NIP-44 decentralized profiles and encryption, Flow Cadence Logs using the power of blockchain and NFTs
 
 ---
 
@@ -16,7 +16,7 @@ KintaGen solves these challenges by integrating three core decentralized technol
 
 | Technological Pillar | Core Capability | The Lab Benefit |
 | :--- | :--- | :--- |
-| **IPFS Storage (Pinata/Lighthouse)** | ⚡ **Fast & Decentralized Downloads.** All data is stored on decentralized networks and served globally via Pinata and Lighthouse. | Share multi-gigabyte datasets, like GC-MS bundles or raw datasets, as easily as a web link—no more shipping hard drives. |
+| **IPFS Storage (Pinata/Synapse)** | ⚡ **Fast & Decentralized Downloads.** All data is stored on decentralized networks and served globally via Pinata. | Share multi-gigabyte datasets, like GC-MS bundles or raw datasets, as easily as a web link—no more shipping hard drives. |
 | **Nostr Identities & NIP-44** | 🔐 **Decentralized Profiles & Encryption.** Files are encrypted client-side securely linking private data to public on-chain provenance. | Securely collaborate on pre-publication data with partner labs without giving up ownership or exposing sensitive IP, while maintaining a portable researcher profile. |
 | **Flow (Cadence) Logbook** | 📜 **Verifiable Audit Trails.** Every analysis step (the agent used, timestamp, output CID) is appended to a project-specific **Flow Cadence NFT**, creating an immutable history. | Create a tamper-proof log for any project, ensuring reproducibility and simplifying compliance for grant reporting. |
 
@@ -26,14 +26,14 @@ On top of this robust data foundation, Kintagen layers a suite of AI and analysi
 - [✅] **Run Analyses:** Execute complex calculations like LD50 dose-response curves, GC-MS metabolomics, and NMR deconvolution on demand via specialized asynchronous R-workers.
 - [✅] **Answer Questions:** Perform Retrieval-Augmented Generation (RAG) on your project's documents to answer complex, domain-specific questions.
 
-Every output is pinned back to IPFS (via Pinata or Lighthouse), ensuring that results are immediately available for downstream agents or external collaborators.
+Every output is pinned back to IPFS (via Pinata or SynapseSDK), ensuring that results are immediately available for downstream agents or external collaborators.
 
 ---
 
 ## 1. Data Lifecycle Overview
 | Stage                           | Implementation in repo                                                                                                                                                                                                                               | Storage target                               |
 | :------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------- |
-| **Upload → (optional) Encrypt** | Front-end posts to Lighthouse/Pinata. File is streamed to IPFS. If encrypted, the browser uses **Nostr NIP-44** to wrap the file; the key is securely managed on the client side utilizing Nostr decentralized profiles. | IPFS via Pinata/Lighthouse |
+| **Upload → (optional) Encrypt** | Front-end posts to SynapseSDK/Pinata. File is streamed to IPFS. If encrypted, the browser uses **Nostr NIP-44** to wrap the file; the key is securely managed on the client side utilizing Nostr decentralized profiles. | IPFS via Pinata/Synapse |
 | **Metadata capture**            | Application extracts metadata and captures analytical output hashes, linking them back to decentralized data structures and IPFS CIDs. | Storage & Application State |
 | **Agent workflows**             | R-based serverless async agents run LD₅₀ / GC-MS / NMR etc.; artifacts are saved locally in the processing server, heavy files are processed, and output data like plots are saved on IPFS with their CIDs logged. | IPFS (heavy artefacts) + Blockchain Flow log |
 | **User access**                 | React app lists data; Nostr integration decrypts data locally, checking keys in browser; provenance timeline pulled from the project’s **Flow NFT** via Cadence scripts.                                                                                           | Browser cache & Decentralized Node |
